@@ -5,17 +5,19 @@ using UnityEngine;
 public class BombController : MonoBehaviour
 {
     Rigidbody2D bomb;
+    Animator animator;
 
     public void Start()
     {
         bomb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     public float ForceMagnitude = 8.0f;
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !GameController.Instance.GamePaused)
         {
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
@@ -31,11 +33,16 @@ public class BombController : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Wall":
-                GameController.Instance.ResetGame();
+                animator.SetTrigger("Explode");
                 break;
             case "Goal":
                 GameController.Instance.WinLevel();
                 break;
         }
+    }
+
+    void Restart()
+    {
+        GameController.Instance.ResetGame();
     }
 }

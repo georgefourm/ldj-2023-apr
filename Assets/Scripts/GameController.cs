@@ -8,9 +8,9 @@ public class GameController : MonoBehaviour
 {
     public GameObject StartPanel;
     public GameObject WinPanel;
+    public bool GamePaused = false;
 
     protected Vector2 StartPosition;
-    protected bool paused =  false;
     protected GameObject player;
 
     public static GameController Instance;
@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (paused && Input.GetKeyDown(KeyCode.Space))
+        if (GamePaused && Input.GetKeyDown(KeyCode.Space))
         {
             StartGame();
         }
@@ -48,26 +48,23 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 1;
         StartPanel.SetActive(false);
-        paused = false;
+        GamePaused = false;
     }
 
     public void ResetGame()
     {
-        var playerPosition = player.transform.position;
-        var cameraPosition = Camera.main.gameObject.transform.position;
-        Camera.main.gameObject.transform.position = new Vector3(playerPosition.x, cameraPosition.y, cameraPosition.z);
         Time.timeScale = 0;
         StartPanel.SetActive(true);
         WinPanel.SetActive(false);
         player.transform.position = StartPosition;
-        paused = true;
+        GamePaused = true;
     }
 
     public void WinLevel()
     {
         Time.timeScale = 0;
         WinPanel.SetActive(true);
-        paused = true;
+        GamePaused = true;
     }
 
     public void NextLevel()
