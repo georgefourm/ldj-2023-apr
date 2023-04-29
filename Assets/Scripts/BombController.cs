@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagnetMouseController : MonoBehaviour
+public class BombController : MonoBehaviour
 {
     Rigidbody2D bomb;
 
@@ -23,6 +23,14 @@ public class MagnetMouseController : MonoBehaviour
             var direction = (bombPos - mousePos).normalized;
             direction *= ForceMagnitude;
             bomb.AddForce(direction, ForceMode2D.Force);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Wall")
+        {
+            GameController.Instance.ResetGame();
         }
     }
 }
