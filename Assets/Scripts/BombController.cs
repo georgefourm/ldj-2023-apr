@@ -28,9 +28,14 @@ public class BombController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Wall")
+        switch (collision.gameObject.tag)
         {
-            GameController.Instance.ResetGame();
+            case "Wall":
+                GameController.Instance.ResetGame();
+                break;
+            case "Goal":
+                GameController.Instance.WinLevel();
+                break;
         }
     }
 }
