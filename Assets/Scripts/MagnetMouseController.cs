@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class MagnetMouseController : MonoBehaviour
 {
-    public Rigidbody2D Bomb2;
-    public float forceMagnitude = 0.3f;
+    Rigidbody2D bomb;
+
+    public void Start()
+    {
+        bomb = GetComponent<Rigidbody2D>();
+    }
+    public float ForceMagnitude = 8.0f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetMouseButton(0))
         {
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
-            var bombPos = Bomb2.transform.position;
+            var bombPos = bomb.transform.position;
             var direction = (bombPos - mousePos).normalized;
-            direction *= forceMagnitude;
-            Bomb2.AddForce(direction, ForceMode2D.Force);
+            direction *= ForceMagnitude;
+            bomb.AddForce(direction, ForceMode2D.Force);
         }
     }
 }
