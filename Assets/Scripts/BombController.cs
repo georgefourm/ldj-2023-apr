@@ -39,11 +39,10 @@ public class BombController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameController.Instance.PauseGame();
-
         switch (collision.gameObject.tag)
         {
             case "Wall":
+                GameController.Instance.PauseGame();
                 animator.SetTrigger("Explode");
                 break;
             case "Goal":

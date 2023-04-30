@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         StartPosition = player.transform.position;
         timer = GetComponentInChildren<TimerController>();
+        PauseGame();
         ResetGame();
     }
 
@@ -78,7 +79,6 @@ public class GameController : MonoBehaviour
 
     public void ResetGame()
     {
-        PauseGame();
         StartPanel.SetActive(true);
         WinPanel.SetActive(false);
         player.transform.position = StartPosition;
@@ -91,7 +91,7 @@ public class GameController : MonoBehaviour
         if(currSceneIndex < SceneManager.sceneCount)
         {
             var txt = WinPanel.GetComponentInChildren<TMP_Text>();
-            txt.text = string.Format("Time: {0}", timer.GetFormattedTime(timer.LastLevelTimeSecs));
+            txt.text = string.Format("Time: {0}", timer.GetFormattedTime());
             WinPanel.SetActive(true);
         }
         else
