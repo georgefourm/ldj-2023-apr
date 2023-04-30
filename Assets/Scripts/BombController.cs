@@ -6,11 +6,13 @@ public class BombController : MonoBehaviour
 {
     Rigidbody2D bomb;
     Animator animator;
+    AudioSource audioSource;
 
     public void Start()
     {
         bomb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
     public float ForceMagnitude = 8.0f;
     public float GravityScale = 0.5f;
@@ -38,6 +40,12 @@ public class BombController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (GameController.Instance.GamePaused)
+        {
+            return;
+        }
+        GameController.Instance.GamePaused = true;
+
         switch (collision.gameObject.tag)
         {
             case "Wall":
@@ -52,5 +60,10 @@ public class BombController : MonoBehaviour
     public void Restart()
     {
         GameController.Instance.ResetGame();
+    }
+
+    public void PlaySound()
+    {
+        audioSource.Play();
     }
 }
