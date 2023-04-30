@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -11,8 +12,13 @@ public class GameController : MonoBehaviour
     public GameObject GameWinPanel;
     public bool GamePaused = false;
 
+    public delegate void PauseStateDelegate();
+    public event PauseStateDelegate OnGamePaused;
+    public event PauseStateDelegate OnGameResumed;
+
     protected Vector2 StartPosition;
     protected GameObject player;
+    protected TimerController timer;
 
     public static GameController Instance;
 
@@ -33,6 +39,7 @@ public class GameController : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         StartPosition = player.transform.position;
+        timer = GetComponentInChildren<TimerController>();
         ResetGame();
     }
 
@@ -45,26 +52,46 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void PauseGame()
+    {
+        GamePaused = true;
+        if(OnGamePaused != null)
+        {
+            OnGamePaused();
+        }
+    }
+
+    public void ResumeGame()
+    {
+        GamePaused = false;
+        if(OnGameResumed != null)
+        {
+            OnGameResumed();
+        }
+    }
+
     public void StartGame()
     {
         StartPanel.SetActive(false);
-        GamePaused = false;
+        ResumeGame();
     }
 
     public void ResetGame()
     {
+        PauseGame();
         StartPanel.SetActive(true);
         WinPanel.SetActive(false);
         player.transform.position = StartPosition;
-        GamePaused = true;
     }
 
     public void WinLevel()
     {
-        GamePaused = true;
+        PauseGame();
         var currSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if(currSceneIndex < SceneManager.sceneCount)
         {
+            var txt = WinPanel.GetComponentInChildren<TMP_Text>();
+            txt.text = string.Format("Time: {0}", timer.GetFormattedTime(timer.LastLevelTimeSecs));
             WinPanel.SetActive(true);
         }
         else

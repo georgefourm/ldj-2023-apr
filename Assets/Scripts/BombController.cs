@@ -15,7 +15,6 @@ public class BombController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
     public float ForceMagnitude = 8.0f;
-    public float GravityScale = 0.5f;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -40,11 +39,7 @@ public class BombController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (GameController.Instance.GamePaused)
-        {
-            return;
-        }
-        GameController.Instance.GamePaused = true;
+        GameController.Instance.PauseGame();
 
         switch (collision.gameObject.tag)
         {

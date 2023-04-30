@@ -26,7 +26,8 @@ public class CursorBlowController : MonoBehaviour
         {
             bomb = player.GetComponent<Rigidbody2D>();
         }
-
+        GameController.Instance.OnGamePaused += audioSource.Stop;
+        GameController.Instance.OnGamePaused += () => spriteRenderer.enabled = false;
     }
 
     // Update is called once per frame
@@ -34,8 +35,6 @@ public class CursorBlowController : MonoBehaviour
     {
         if (GameController.Instance.GamePaused)
         {
-            audioSource.Stop();
-            spriteRenderer.enabled = false;
             return;
         }
 
