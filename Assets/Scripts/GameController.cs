@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject StartPanel;
     public GameObject WinPanel;
+    public GameObject GameWinPanel;
     public bool GamePaused = false;
 
     protected Vector2 StartPosition;
@@ -60,8 +61,16 @@ public class GameController : MonoBehaviour
 
     public void WinLevel()
     {
-        WinPanel.SetActive(true);
         GamePaused = true;
+        var currSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if(currSceneIndex < SceneManager.sceneCount)
+        {
+            WinPanel.SetActive(true);
+        }
+        else
+        {
+            GameWinPanel.SetActive(true);
+        }
     }
 
     public void NextLevel()
@@ -71,5 +80,15 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
