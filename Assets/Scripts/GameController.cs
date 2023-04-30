@@ -46,14 +46,12 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
-        Time.timeScale = 1;
         StartPanel.SetActive(false);
         GamePaused = false;
     }
 
     public void ResetGame()
     {
-        Time.timeScale = 0;
         StartPanel.SetActive(true);
         WinPanel.SetActive(false);
         player.transform.position = StartPosition;
@@ -62,7 +60,6 @@ public class GameController : MonoBehaviour
 
     public void WinLevel()
     {
-        Time.timeScale = 0;
         WinPanel.SetActive(true);
         GamePaused = true;
     }

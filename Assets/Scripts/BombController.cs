@@ -13,11 +13,19 @@ public class BombController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
     public float ForceMagnitude = 8.0f;
+    public float GravityScale = 0.5f;
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetMouseButton(0) && !GameController.Instance.GamePaused)
+        if (GameController.Instance.GamePaused)
+        {
+            bomb.Sleep();
+            return;
+        }
+        bomb.WakeUp();
+        
+        if (Input.GetMouseButton(0))
         {
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
@@ -41,7 +49,7 @@ public class BombController : MonoBehaviour
         }
     }
 
-    void Restart()
+    public void Restart()
     {
         GameController.Instance.ResetGame();
     }
