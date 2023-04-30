@@ -109,7 +109,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a746bdba479678408b72739d68a02c7
-      internalID: -75943127
+      spriteID: 8f7bd3a19ed8ba94f927cff650ff5c67
+      internalID: 773062975
       vertices: []
       indices: 
       edges: []
@@ -130,7 +130,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ce999027d9c0144f9c93794d1b48a92
-      internalID: -1547772081
+      spriteID: 706dfd26d9b425e43a0b0a82ca448561
+      internalID: -2094520219
       vertices: []
       indices: 
       edges: []
@@ -151,6 +151,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aacbdcd0e16c0d44da8db538d27e4647
+      internalID: 437684224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: factory_floor_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b59f8e226aaf0a43b03b3a0bfa59c92
+      internalID: 2109525909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: factory_floor_4
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 128
         width: 64
         height: 64
@@ -161,50 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04015f3b1ca9919499da7cf83a9fd499
-      internalID: 1299016743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: factory_floor_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a120462836e14784095b544669cb1a35
-      internalID: 1960230815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: factory_floor_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e56c8d8d17deba2479e5d534bf513108
-      internalID: -1433561001
+      spriteID: 07e6176d1c5908a4184f25a88b25fcaa
+      internalID: 1409653300
       vertices: []
       indices: 
       edges: []
@@ -213,6 +213,111 @@ TextureImporter:
       name: factory_floor_5
       rect:
         serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32610b28af3399c4295555983842f970
+      internalID: -1747670004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: factory_floor_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399eadced4cc6a4458726498a2724fd8
+      internalID: 658071841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: factory_floor_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c983bd7aec7d7514490cdb817839c926
+      internalID: 276294353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: factory_floor_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e727fd6edacd09946aa559dee3bcf1e6
+      internalID: -543588117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: factory_floor_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bcfbc91d12510444bdc701c38fec019
+      internalID: 701797278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: factory_floor_10
+      rect:
+        serializedVersion: 2
         x: 128
         y: 64
         width: 64
@@ -224,14 +329,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb0f0c1b172b9e04597c70c85ba131a5
-      internalID: 531455209
+      spriteID: 6ad9f37e3bd33f3428594b76ab8098b0
+      internalID: 1689642949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: factory_floor_6
+      name: factory_floor_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beffaa587e84a1b4ea9748309ef7cd0f
+      internalID: 965959527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: factory_floor_12
       rect:
         serializedVersion: 2
         x: 0
@@ -245,50 +371,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a31b735267bf8f94c81127fc7386bba1
-      internalID: 52781807
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: factory_floor_7
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98bf40ff79cd8fa439625cb6ef3333f8
-      internalID: -1723353173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: factory_floor_8
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39e3af4db65e740419a8345afe361a53
-      internalID: 1509695286
+      spriteID: 24ee7153866794d4ea4ba766413f7d05
+      internalID: 1934034368
       vertices: []
       indices: 
       edges: []
@@ -304,15 +388,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      factory_floor_0: -75943127
-      factory_floor_1: -1547772081
-      factory_floor_2: 1299016743
-      factory_floor_3: 1960230815
-      factory_floor_4: -1433561001
-      factory_floor_5: 531455209
-      factory_floor_6: 52781807
-      factory_floor_7: -1723353173
-      factory_floor_8: 1509695286
+      factory_floor_0: 773062975
+      factory_floor_1: -2094520219
+      factory_floor_10: 1689642949
+      factory_floor_11: 965959527
+      factory_floor_12: 1934034368
+      factory_floor_2: 437684224
+      factory_floor_3: 2109525909
+      factory_floor_4: 1409653300
+      factory_floor_5: -1747670004
+      factory_floor_6: 658071841
+      factory_floor_7: 276294353
+      factory_floor_8: -543588117
+      factory_floor_9: 701797278
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
