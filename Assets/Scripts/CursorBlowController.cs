@@ -38,12 +38,7 @@ public class CursorBlowController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameController.Instance.GamePaused)
-        {
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GameController.Instance.GamePaused)
         {
             spriteRenderer.enabled = true;
             int rand = Random.Range(0, farts.Length);
