@@ -92,7 +92,7 @@ public class GameController : MonoBehaviour
     {
         PauseGame();
         var currSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if(currSceneIndex < SceneManager.sceneCount)
+        if(currSceneIndex < SceneManager.sceneCountInBuildSettings - 1)
         {
             var txt = WinPanel.GetComponentInChildren<TMP_Text>();
             txt.text = string.Format("Time: {0}", timer.GetFormattedTime());
@@ -107,7 +107,7 @@ public class GameController : MonoBehaviour
     public void NextLevel()
     {
         var currSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if(currSceneIndex < SceneManager.sceneCount)
+        if(currSceneIndex < SceneManager.sceneCountInBuildSettings - 1)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
