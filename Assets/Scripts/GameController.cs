@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public GameObject WinPanel;
     public GameObject GameWinPanel;
     public bool GamePaused = false;
+    public bool PlayerDead = false;
 
     public delegate void PauseStateDelegate();
     public event PauseStateDelegate OnGamePaused;
@@ -41,7 +42,7 @@ public class GameController : MonoBehaviour
         StartPosition = player.transform.position;
         timer = GetComponentInChildren<TimerController>();
         PauseGame();
-        ResetGame();
+        ResetLevel();
     }
 
     // Update is called once per frame
@@ -51,9 +52,9 @@ public class GameController : MonoBehaviour
         {
             Quit();
         }
-        if (GamePaused && Input.GetMouseButtonDown(0))
+        if (GamePaused && Input.GetMouseButtonDown(0) && !PlayerDead)
         {
-            StartGame();
+            StartLevel();
         }
     }
 
@@ -75,16 +76,17 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void StartGame()
+    public void StartLevel()
     {
         StartPanel.SetActive(false);
         ResumeGame();
     }
 
-    public void ResetGame()
+    public void ResetLevel()
     {
         StartPanel.SetActive(true);
         WinPanel.SetActive(false);
+        PlayerDead = false;
         player.transform.position = StartPosition;
     }
 
@@ -102,6 +104,12 @@ public class GameController : MonoBehaviour
         {
             GameWinPanel.SetActive(true);
         }
+    }
+
+    public void LoseLevel()
+    {
+        PlayerDead = true;
+        PauseGame();
     }
 
     public void NextLevel()

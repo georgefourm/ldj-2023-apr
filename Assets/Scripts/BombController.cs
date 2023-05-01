@@ -42,7 +42,7 @@ public class BombController : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Wall":
-                GameController.Instance.PauseGame();
+                GameController.Instance.LoseLevel();
                 animator.SetTrigger("Explode");
                 break;
             case "Goal":
@@ -53,7 +53,7 @@ public class BombController : MonoBehaviour
 
     public void Restart()
     {
-        GameController.Instance.ResetGame();
+        GameController.Instance.ResetLevel();
     }
 
     public void PlaySound()
