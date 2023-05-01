@@ -7,9 +7,9 @@ public class CursorBlowController : MonoBehaviour
 {
     private Rigidbody2D bomb;
     private SpriteRenderer spriteRenderer;
-    private AudioSource audioSource;
-
-    public AudioClip[] farts;
+    public AudioSource fart1;
+    public AudioSource fart2;
+    public AudioSource fart3;
 
     void Awake()
     {
@@ -20,7 +20,6 @@ public class CursorBlowController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
-        audioSource = GetComponent<AudioSource>();
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
@@ -31,8 +30,32 @@ public class CursorBlowController : MonoBehaviour
 
     void StopBlowing()
     {
-        audioSource.Stop();
+        StopFart();
         spriteRenderer.enabled = false;
+    }
+
+    void StartFart()
+    {
+        int rand = Random.Range(0, 3);
+        if (rand == 0)
+        {
+            if (!fart1.isPlaying) fart1.Play();
+        }
+        else if (rand == 1)
+        {
+            if (!fart2.isPlaying) fart2.Play();
+        }
+        else
+        {
+            if (!fart3.isPlaying) fart3.Play();
+        }
+    }
+
+    void StopFart()
+    {
+        if (fart1.isPlaying) fart1.Stop();
+        if (fart2.isPlaying) fart2.Stop();
+        if (fart3.isPlaying) fart3.Stop();
     }
 
     // Update is called once per frame
@@ -40,18 +63,14 @@ public class CursorBlowController : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && !spriteRenderer.enabled && !GameController.Instance.GamePaused)
         {
+            StartFart();
             spriteRenderer.enabled = true;
-            int rand = Random.Range(0, farts.Length);
-            audioSource.clip = farts[rand];
-            audioSource.Play();
+            
         }
         if (Input.GetMouseButtonUp(0))
         {
             spriteRenderer.enabled = false;
-            if (audioSource.isPlaying)
-            {
-                audioSource.Stop();
-            }
+            StopFart();
         }
         if (spriteRenderer.enabled)
         {
