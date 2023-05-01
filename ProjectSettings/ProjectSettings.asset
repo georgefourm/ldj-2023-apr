@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: ldj-apr-2023
-  defaultCursor: {fileID: 2800000, guid: cab72d3f2810e2d42a23438e9c0cceb7, type: 3}
+  defaultCursor: {fileID: 2800000, guid: b3b6dc6ae8b3bc24b99c006b764078ca, type: 3}
   cursorHotspot: {x: 32, y: 32}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
